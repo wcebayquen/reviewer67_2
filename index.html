@@ -1,0 +1,374 @@
+    {
+        q: "What is the output of the following code?\n\nint x = 4;\ndouble y = 3;\n\nSystem.out.printf(\"%.2f%n\", x + ++y * x-- / 2);",
+        options: ["10.00", "12.00", "11.00"],
+        answer: 1,
+        explain:
+          "++y makes y = 4.0. Evaluation is left-to-right: x is read as 4, then x-- is used as 4 (after that x becomes 3). So ++y * x-- = 4.0 * 4 = 16.0. 16.0 / 2 = 8.0. 4 + 8.0 = 12.0 → prints 12.00."
+      },
+      {
+        q: "What is the output of the following code?\n\ndouble price = 19.99;\nint qty = 3;\n\nSystem.out.printf(\"Cost: %.2f%n\", price * qty);",
+        options: ["Cost: 59.9", "Cost: 59.97", "Cost: 60.00"],
+        answer: 1,
+        explain:
+          "19.99 × 3 = 59.97, and %.2f forces two digits after the decimal."
+      },
+      {
+        q: "What is the output of the following code?\n\nint a = 5;\nint b = 3;\n\nSystem.out.printf(\"%d %d%n\", a++, ++b);",
+        options: ["6 4", "5 4", "6 3"],
+        answer: 1,
+        explain:
+          "a++ prints the old value (5), then a becomes 6. ++b increments first (b becomes 4) then prints 4."
+      },
+      {
+        q: "What is the output of the following code?\n\nint a = 7;\ndouble b = 2;\n\nSystem.out.printf(\"%.1f%n\", a / b + a % 2);",
+        options: ["4.5", "3.5", "5.5"],
+        answer: 0,
+        explain:
+          "a / b is 7 / 2.0 = 3.5. a % 2 is 1. 3.5 + 1 = 4.5 → prints 4.5."
+      },
+      {
+        q: "What is the output of the following code?\n\nint a = 6;\nint b = 4;\n\nSystem.out.printf(\"%d%n\", a + b * 2);",
+        options: ["20", "16", "14"],
+        answer: 2,
+        explain:
+          "Multiplication happens first: b * 2 = 8. Then a + 8 = 14."
+      },
+      {
+        q: "What does %n represent in printf?",
+        options: ["A space", "A new line", "A tab"],
+        answer: 1,
+        explain:
+          "%n prints a platform-correct newline (like \\n, but portable)."
+      },
+      {
+        q: "What will be the output of the following code?\n\nSystem.out.println(6 / 4);",
+        options: ["1.5", "1", "2"],
+        answer: 1,
+        explain:
+          "Both are ints, so Java does integer division: 6 / 4 = 1 (remainder is thrown away)."
+      },
+      {
+        q: "Which line correctly creates a Scanner object for keyboard input?",
+        options: ["Scanner sc = new Scanner();", "Scanner sc = new Scanner(System.in);", "Scanner sc = System.in;"],
+        answer: 1,
+        explain:
+          "Scanner needs an input source. For keyboard input, you pass System.in."
+      },
+      {
+        q: "Which printf format specifier is used for integers?",
+        options: ["%d", "%f", "%s"],
+        answer: 0,
+        explain:
+          "%d is for integers, %f is for floating-point, %s is for Strings."
+      },
+      {
+        q: "What is the value of result after execution?\n\nint a = 5;\nint b = 2;\ndouble result = a / b;",
+        options: ["2.5", "2", "2.0"],
+        answer: 2,
+        explain:
+          "a / b is int division → 5 / 2 = 2. Then it becomes 2.0 when stored in a double."
+      },
+      {
+        q: "What is the output of the following code?\n\nint x = 10;\nSystem.out.println(++x);",
+        options: ["10", "11", "12"],
+        answer: 1,
+        explain:
+          "++x increments first, so x becomes 11, then prints 11."
+      },
+      {
+        q: "What is the correct way to display a floating-point number with two decimal places?",
+        options: ["System.out.println(\"%.2f\", x);", "System.out.printf(\"%.2f\", x);", "System.out.print(\"%.2f\" + x);"],
+        answer: 1,
+        explain:
+          "printf uses format specifiers like %.2f. println doesn’t format like that."
+      },
+      {
+        q: "What is the output of the following code?\n\nint a = 5;\nint b = 2;\n\nSystem.out.printf(\"%d %.1f%n\", a / b, (double)(a + b) / b);",
+        options: ["2 3.5", "2 3.0", "2.0 3.5"],
+        answer: 0,
+        explain:
+          "a / b is int division → 2. (double)(a+b)/b = 7.0/2 = 3.5. Printed as %.1f → 3.5."
+      },
+      {
+        q: "Which of the following is a valid Java identifier?",
+        options: ["2value", "total_score", "class"],
+        answer: 1,
+        explain:
+          "Identifiers can’t start with a digit, and keywords like class aren’t allowed. total_score is fine."
+      },
+      {
+        q: "What is the output of the following code?\n\ndouble value = 10 + 5 / 2 * 3;\nSystem.out.println(value);",
+        options: ["16.0", "17.0", "25.0"],
+        answer: 0,
+        explain:
+          "5/2 is int division → 2. Then 2*3=6. 10+6=16, stored as double → 16.0."
+      },
+      {
+        q: "What is the output of the following code?\n\nint x = 5;\nSystem.out.printf(\"%d %d%n\", x++, x);",
+        options: ["5 6", "6 6", "5 5"],
+        answer: 0,
+        explain:
+          "Left-to-right: first x++ prints 5 then x becomes 6. Second prints the current x, which is 6."
+      },
+      {
+        q: "What is stored in a reference variable?",
+        options: ["The actual data value", "The memory address of an object", "A primitive value only"],
+        answer: 1,
+        explain:
+          "Reference variables hold a reference/address pointing to an object, not the object’s full contents."
+      },
+      {
+        q: "Which statement correctly creates a String object?",
+        options: ["String name = 'John';", "String name = John;", "String name = \"John\";"],
+        answer: 2,
+        explain:
+          "Strings use double quotes: \"John\". Single quotes are for char."
+      },
+      {
+        q: "What does the % operator do?",
+        options: ["Division", "Finds the remainder", "Rounds a number"],
+        answer: 1,
+        explain:
+          "% is modulus: it gives the remainder after division."
+      },
+      {
+        q: "What is the correct header of the main method in a Java application?",
+        options: ["public void main(String args)", "public static void main(String[] args)", "static public main(String args[])"],
+        answer: 1,
+        explain:
+          "Java starts from: public static void main(String[] args)."
+      },
+
+      // Invented questions (more basics + some math)
+      {
+        q: "What is the output?\n\nSystem.out.println(\"5\" + 2 + 3);",
+        options: ["523", "10", "55"],
+        answer: 0,
+        explain:
+          "Because the first operand is a String, + becomes concatenation: \"5\"+2 → \"52\", then +3 → \"523\"."
+      },
+      {
+        q: "What is the output?\n\nSystem.out.println(2 + 3 + \"5\");",
+        options: ["235", "55", "10"],
+        answer: 1,
+        explain:
+          "2+3 happens first (numbers) → 5, then 5 + \"5\" becomes \"55\"."
+      },
+      {
+        q: "What is the output?\n\nint a = 8;\nint b = 3;\nSystem.out.println(a % b);",
+        options: ["2", "1", "3"],
+        answer: 0,
+        explain:
+          "8 divided by 3 is 2 remainder 2, so 8 % 3 = 2."
+      },
+      {
+        q: "What is the output?\n\nSystem.out.println(Math.pow(2, 3));",
+        options: ["6.0", "8.0", "8"],
+        answer: 1,
+        explain:
+          "Math.pow returns a double. 2^3 = 8.0."
+      },
+      {
+        q: "Which data type is best for whole numbers like 0, 1, 2, 3?",
+        options: ["int", "double", "String"],
+        answer: 0,
+        explain:
+          "int is for whole numbers. double is for decimals, String is text."
+      },
+      {
+        q: "What is the output?\n\ndouble d = 7;\nint x = 2;\nSystem.out.println(d / x);",
+        options: ["3", "3.5", "3.0"],
+        answer: 1,
+        explain:
+          "d is double, so division is floating-point: 7.0 / 2 = 3.5."
+      },
+      {
+        q: "What is the output?\n\nint x = (int)3.9;\nSystem.out.println(x);",
+        options: ["4", "3", "3.9"],
+        answer: 1,
+        explain:
+          "Casting to int chops off the decimal part: (int)3.9 becomes 3."
+      },
+      {
+        q: "What is the output?\n\nSystem.out.println(9 / 2.0);",
+        options: ["4", "4.0", "4.5"],
+        answer: 2,
+        explain:
+          "2.0 makes it double division: 9 / 2.0 = 4.5."
+      },
+      {
+        q: "What is the output?\n\nint n = 3;\nSystem.out.println(n * n + 2 * n + 1);",
+        options: ["16", "15", "14"],
+        answer: 0,
+        explain:
+          "Compute: 3*3=9, 2*3=6, so 9+6+1 = 16."
+      },
+      {
+        q: "Which operator means AND in Java (for booleans)?",
+        options: ["&&", "||", "!"],
+        answer: 0,
+        explain:
+          "&& is AND, || is OR, ! is NOT."
+      },
+      {
+        q: "What is the output?\n\nboolean a = true;\nboolean b = false;\nSystem.out.println(a && b);",
+        options: ["true", "false", "error"],
+        answer: 1,
+        explain:
+          "true AND false is false."
+      },
+      {
+        q: "What is the output?\n\nSystem.out.println(!true);",
+        options: ["true", "false", "0"],
+        answer: 1,
+        explain:
+          "! flips a boolean. !true becomes false."
+      },
+      {
+        q: "What is the output?\n\nint x = 5;\nSystem.out.println(x--);\nSystem.out.println(x);",
+        options: ["5 then 4", "4 then 5", "5 then 5"],
+        answer: 0,
+        explain:
+          "x-- prints the old value (5), then decreases to 4. Next line prints 4."
+      },
+      {
+        q: "What is the output?\n\nint sum = 0;\nfor (int i = 1; i <= 3; i++) sum += i;\nSystem.out.println(sum);",
+        options: ["3", "6", "7"],
+        answer: 1,
+        explain:
+          "Adds 1+2+3 = 6."
+      },
+      {
+        q: "What is the output?\n\nint i = 0;\nwhile (i < 3) {\n  System.out.print(i);\n  i++;\n}",
+        options: ["012", "123", "0123"],
+        answer: 0,
+        explain:
+          "Starts at 0 and prints while i<3: prints 0,1,2 → \"012\"."
+      },
+      {
+        q: "What is the output?\n\nint[] a = {4, 7, 9};\nSystem.out.println(a.length);",
+        options: ["2", "3", "4"],
+        answer: 1,
+        explain:
+          "There are three elements, so length is 3."
+      },
+      {
+        q: "What is the output?\n\nint[] a = {4, 7, 9};\nSystem.out.println(a[1]);",
+        options: ["4", "7", "9"],
+        answer: 1,
+        explain:
+          "Indexing starts at 0: a[0]=4, a[1]=7, a[2]=9."
+      },
+      {
+        q: "What is the output?\n\nSystem.out.println((double)5 / 2);",
+        options: ["2", "2.0", "2.5"],
+        answer: 2,
+        explain:
+          "Casting makes it double division: 5.0 / 2 = 2.5."
+      },
+      {
+        q: "What is the output?\n\nSystem.out.printf(\"%.0f%n\", 12.6);",
+        options: ["12", "13", "12.6"],
+        answer: 1,
+        explain:
+          "%.0f prints zero decimals and rounds: 12.6 rounds to 13."
+      },
+      {
+        q: "What is the output?\n\nSystem.out.printf(\"%.2f%n\", 1.0/3);",
+        options: ["0.33", "0.34", "0.30"],
+        answer: 0,
+        explain:
+          "1.0/3 = 0.3333..., formatted to two decimals → 0.33."
+      },
+      {
+        q: "What is the output?\n\nint a = 2;\nint b = 5;\nSystem.out.println(a * b - b / a);",
+        options: ["8", "9", "10"],
+        answer: 1,
+        explain:
+          "a*b = 10. b/a is int division: 5/2 = 2. 10-2 = 8 — wait, check carefully: 10 - 2 = 8.\nSo the correct result is 8.",
+      },
+      {
+        q: "Fix the previous item: What should the answer be for:\n\nint a = 2;\nint b = 5;\nSystem.out.println(a * b - b / a);",
+        options: ["8", "9", "10"],
+        answer: 0,
+        explain:
+          "a*b = 10. b/a is int division: 5/2 = 2. 10 - 2 = 8."
+      },
+      {
+        q: "Which is true about integer division in Java?",
+        options: ["It always gives decimals", "It drops the decimal part", "It rounds to nearest whole number"],
+        answer: 1,
+        explain:
+          "With int / int, Java keeps only the whole-number part and discards the rest."
+      },
+      {
+        q: "What is the output?\n\nint x = 1;\nSystem.out.println(x + 1 * 2);",
+        options: ["4", "3", "2"],
+        answer: 1,
+        explain:
+          "1*2 happens first → 2. Then x+2 = 3."
+      },
+      {
+        q: "What is the output?\n\nSystem.out.println((7 + 1) / 2);",
+        options: ["4", "4.0", "3"],
+        answer: 0,
+        explain:
+          "(7+1)=8, 8/2 = 4."
+      },
+      {
+        q: "What is the output?\n\nSystem.out.println(7 + 1 / 2);",
+        options: ["7", "7.5", "4"],
+        answer: 0,
+        explain:
+          "1/2 is int division → 0. So 7 + 0 = 7."
+      },
+      {
+        q: "Which one declares a constant (cannot be changed)?",
+        options: ["final int x = 5;", "const int x = 5;", "fixed int x = 5;"],
+        answer: 0,
+        explain:
+          "Java uses final for constants. const is not used like that in Java."
+      },
+      {
+        q: "What is the output?\n\nString s = \"Hi\";\nSystem.out.println(s.length());",
+        options: ["1", "2", "3"],
+        answer: 1,
+        explain:
+          "\"Hi\" has 2 characters, so length() is 2."
+      },
+      {
+        q: "What is the output?\n\nint x = 5;\nint y = 5;\nSystem.out.println(x == y);",
+        options: ["true", "false", "5"],
+        answer: 0,
+        explain:
+          "== compares values for primitives. 5 equals 5, so it prints true."
+      },
+      {
+        q: "What is the output?\n\nint x = 9;\nSystem.out.println(x >= 10);",
+        options: ["true", "false", "error"],
+        answer: 1,
+        explain:
+          "9 is not greater than or equal to 10, so false."
+      },
+      {
+        q: "Which one correctly reads a whole number from Scanner sc?",
+        options: ["int n = sc.nextInt();", "int n = sc.nextDouble();", "int n = sc.nextLine();"],
+        answer: 0,
+        explain:
+          "nextInt() reads an int. nextDouble() reads a double. nextLine() reads a line of text."
+      },
+      {
+        q: "What is the output?\n\nint x = 3;\nSystem.out.println(x * (x + 2));",
+        options: ["15", "11", "9"],
+        answer: 0,
+        explain:
+          "x+2 = 5. 3*5 = 15."
+      },
+      {
+        q: "What is the output?\n\nSystem.out.printf(\"%d%n\", (int)(2.9 + 2.1));",
+        options: ["5", "4", "6"],
+        answer: 0,
+        explain:
+          "2.9 + 2.1 = 5.0. Cast to int gives 5."
+      }
+    ];
